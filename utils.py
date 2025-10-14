@@ -4,6 +4,7 @@ import os
 import torch
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
+import torch.nn as nn
 
 class PCDataset(Dataset):
     def __init__(self, stage, transform=None):
