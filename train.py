@@ -28,7 +28,7 @@ if __name__ == "__main__":
         ]
     )
 
-    batch_size = 32
+    batch_size = 16
     device = accelerator.device
 
     model = PointCloudNet(
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     threshold = 0.001
     alpha = 5.0
 
-    num_epochs = 1000
+    num_epochs = 100
 
     accelerator.init_trackers(project_name="wacv_pc1024", config={})
 
@@ -196,7 +196,7 @@ if __name__ == "__main__":
         accelerator.log(
             {"test/loss": np.mean(loss_history), "cd": cdtable, "test/epoch": epoch + 1}
         )
-        model_save_name = "mymodel.pth"
+        model_save_name = "/kaggle/working/trained_models/report3model.pth"
         score = np.mean(-1 * total_cd)
         sche.step(score)
         if score < best:
