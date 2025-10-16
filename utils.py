@@ -32,7 +32,7 @@ class PCDataset(Dataset):
         self.labels = []
         self.data = []
 
-        for c in ["02958343", "02691156", "03001627"]:
+        for c in ["02958343"]: #"02691156", "03001627"
             for label in labels:
                 volume_path = f"/kaggle/input/shapenet-dataset/ShapeNet_pointclouds/{c}/{label}/pointcloud_1024.npy"
                 files = glob(
