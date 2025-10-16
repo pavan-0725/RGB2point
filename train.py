@@ -32,7 +32,7 @@ if __name__ == "__main__":
     device = accelerator.device
 
     model = PointCloudNet(
-        num_views=1, point_cloud_size=1024, num_heads=4, dim_feedforward=2048
+        num_views=1, point_cloud_size=512, num_heads=2, dim_feedforward=1024
     )
     optimizer = optim.Adam(model.parameters(), lr=5e-4)
     sche = torch.optim.lr_scheduler.ReduceLROnPlateau(
